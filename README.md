@@ -67,8 +67,3 @@ Start the application using php artisan serve.
 Access the API endpoints mentioned above to interact with the application.
 Enjoy using the Laravel 10 application with CRUD operations for cities and weather data retrieval from the OpenWeather API!
 
-![image](https://github.com/vickydevhub/openweather-app/assets/5188988/4af6ff32-8b61-4398-ba85-fd54a3f8c36e)
-![image](https://github.com/vickydevhub/openweather-app/assets/5188988/dc74cda0-b4ad-4dd3-9c5f-9bf5811ace5e)
-![image](https://github.com/vickydevhub/openweather-app/assets/5188988/79038d44-e738-4158-a3db-1ebc7e76da80)
-![image](https://github.com/vickydevhub/openweather-app/assets/5188988/77d2d181-ad37-42d8-b93f-035713d437ba)
-![image](https://github.com/vickydevhub/openweather-app/assets/5188988/36254007-e849-444a-a3b4-c21f3255d360)
