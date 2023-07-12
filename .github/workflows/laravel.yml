@@ -45,12 +45,6 @@ jobs:
         mkdir -p database
         touch database/openweather_app.sql
     - name: Execute PHPUnit tests
-      env:
-        DB_CONNECTION: mysql
-        DB_DATABASE: testdatabase
-        DB_PORT: 33306
-        DB_USER: root
-        DB_PASSWORD: secret
       run: |
         php artisan migrate:fresh --seed
         ./vendor/bin/pest
