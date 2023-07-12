@@ -45,6 +45,5 @@ jobs:
       run: |
         php artisan migrate
         php artisan db:seed --class=CitySeeder
-        php artisan serve
         ./vendor/bin/pest
       
