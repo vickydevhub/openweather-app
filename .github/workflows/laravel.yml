@@ -13,11 +13,15 @@ jobs:
 
     services:
       mysql:
-        image: mysql:8.0
+        image: mysql:5.7
         env:
-          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_USER: user
+          MYSQL_PASSWORD: secret
+          MYSQL_DATABASE: openweather_app
+          MYSQL_ROOT_PASSWORD: root
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
         ports:
-          - 3306:3306
+          - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
@@ -27,6 +31,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Verify MySQL connection
+      run: |
+        mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uuser -psecret -e "SHOW DATABASES"  
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
@@ -37,5 +44,14 @@ jobs:
       run: |
         mkdir -p database
         touch database/openweather_app.sql
-    - name: Execute tests (Unit and Feature tests) via PEST
-      run: ./vendor/bin/pest
+    - name: Execute PHPUnit tests
+      env:
+        DB_CONNECTION: mysql
+        DB_DATABASE: testdatabase
+        DB_PORT: 33306
+        DB_USER: root
+        DB_PASSWORD: secret
+      run: |
+        php artisan migrate:fresh --seed
+        ./vendor/bin/pest
+      
