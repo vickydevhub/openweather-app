@@ -19,7 +19,7 @@ class WeatherAPITest extends TestCase
 
         // Make a request to the API for each city and check the response
         foreach ($cities as $city) {
-            $response = $this->get('/api/weather/'.$city->name);
+            $response = $this->postJson('/api/v1/weather/'.$city->name);
 
             $response->assertStatus(200); // Ensure the response is successful
 

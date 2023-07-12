@@ -16,7 +16,7 @@ class WeatherResource extends JsonResource
     {
         return [
             'city' => $this->resource['city'],
-            'weather' => $this->resource['weather']['list'],
+            'weather' => $this->resource['weather'],
         ];
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCityRequest;
 use App\Http\Requests\UpdateCityRequest;
 use App\Models\City;
 use App\Services\WeatherService;
+use Illuminate\View\View;
 
 class CityController extends Controller
 {
@@ -19,7 +20,7 @@ class CityController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $cities = City::all();
 

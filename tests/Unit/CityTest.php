@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class CityTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use WithFaker;
 
     /**
      * Test creating a city.

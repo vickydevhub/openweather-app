@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::prefix('v1')->middleware(['throttle:30,1'])->group(function () {
+Route::prefix('v1')->middleware(['throttle:5,1'])->group(function () {
     Route::get('/weather', [WeatherController::class, 'index']);
     Route::get('/weather/{city}', [WeatherController::class, 'show']);
 });
