@@ -46,9 +46,10 @@ jobs:
         touch database/openweather_app.sql
     - name: Execute PHPUnit tests
       env:
+        DB_HOST: 127.0.0.1
         DB_CONNECTION: mysql
         DB_DATABASE: openweather_app
-        DB_PORT: 33306
+        DB_PORT: ${{ job.services.mysql.ports['3306'] }}
         DB_USER: root
         DB_PASSWORD: secret
       run: |
