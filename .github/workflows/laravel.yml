@@ -31,7 +31,7 @@ jobs:
     - name: Set up environment variables
       run: |
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}"
-          echo "ALGOLIA_SECRET${{ secrets.ALGOLIA_SECRET_KEY }}"
+          echo "ALGOLIA_SECRET=${{ secrets.ALGOLIA_SECRET_KEY }}"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
