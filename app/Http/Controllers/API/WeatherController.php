@@ -42,7 +42,7 @@ class WeatherController extends BaseController
      */
     public function show($city)
     {
-        $city = City::where('name', $city)->first();
+        $city = City::search($city)->first();
 
         if (! $city) {
             return response()->json(['error' => 'City not found'], 404);

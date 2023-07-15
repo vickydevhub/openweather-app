@@ -10,6 +10,9 @@ To use the Open Weather API, you need to configure your API key in the config/se
 ## Resource
 A resource called WeatherResource has been created to format the weather data for API responses. This resource can be found in the app\Http\Resources directory.
 
+## Algolia Search for Cities
+This project utilizes Algolia Search to create and maintain an index of cities. Algolia Search is a powerful search-as-a-service platform that provides fast and relevant search results.
+
 ## Tests
 Several test cases have been created to ensure the functionality of the application.
 
