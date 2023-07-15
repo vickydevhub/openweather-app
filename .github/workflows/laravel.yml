@@ -46,6 +46,5 @@ jobs:
         ALGOLIA_SECRET: ${{ secrets.ALGOLIA_SECRET_KEY }}
       run: |
         php artisan migrate
-        php artisan db:seed --class=CitySeeder
         php artisan test
       
