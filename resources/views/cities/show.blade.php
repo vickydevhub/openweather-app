@@ -1,7 +1,10 @@
-@extends('layouts.app')
-
-@section('content')
-    <h1>City Details</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            City Details
+        </h2>
+    </x-slot>
+  
 
     <table class="table">
         <tbody>
@@ -37,4 +40,4 @@
     </table>
 
     <a href="{{ route('cities.index') }}" class="btn btn-primary">Back</a>
-@endsection
+</x-app-layout>

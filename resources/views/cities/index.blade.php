@@ -1,6 +1,9 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Cities
+        </h2>
+    </x-slot>
     <h1>Cities</h1>
 
     <a href="{{ route('cities.create') }}" class="btn btn-primary mb-3">Create City</a>
@@ -37,4 +40,4 @@
             @endforeach
         </tbody>
     </table>
-@endsection
+</x-app-layout>
