@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Create City
@@ -26,4 +26,4 @@
             <button type="submit" class="btn btn-primary" style="margin-top: 24px;">Create</button>
         </div>
     </form>
-</x-app-layout>
+</x-guest-layout>

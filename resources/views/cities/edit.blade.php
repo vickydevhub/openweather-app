@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Edit City
@@ -27,4 +27,4 @@
             <button type="submit" class="btn btn-primary" style="margin-top: 24px;">Update</button>
         </div>
     </form>
-</x-app-layout>
+</x-guest-layout>
