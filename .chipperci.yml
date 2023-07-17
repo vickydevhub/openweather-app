@@ -22,4 +22,4 @@ pipeline:
       # npm run dev # Mix
 
   - name: Run Tests
-    cmd: phpunit
+    cmd: ./vendor/bin/pest
